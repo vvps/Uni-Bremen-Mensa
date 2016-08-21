@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 page = urllib.request.urlopen('http://oracle-web.zfn.uni-bremen.de/essen/mensa').read()
 
-soup = BeautifulSoup(page)
+soup = BeautifulSoup(page, "html.parser")
 soup.prettify()
 menuItems = soup.findAll('font',{'color':'RED'}) # Identify today's Menu
 
